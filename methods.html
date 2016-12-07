@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>All About Arrays</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="styles/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Chango|Glegoo|Merriweather+Sans" rel="stylesheet">
+    <script src="modernizr.custom.05819.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>All About Arrays</h1>
+      <nav>
+        <ul id="nav">
+          <li><a href="index.html">What's an Array?</a></li>
+          <li><a href="methods.html" class="current">Manipulating Arrays</a></li>
+          <li><a href="dataconversion.html">Arrays to Strings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="arrayDescription">
+      <h2>Storing All of Your [ Data ]</h2>
+      <h3>Array Methods</h3>
+        <p>You can maniplate arrays using methods of the <span class="mono">Array</span> class. The following are <span class="mono">Array</span> methods:</p>
+          <table id="methodsTable">
+            <tr>
+              <th><span class="mono">Array</span> Method</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><span class="mono">pop()</span></td>
+              <td>Removes the last element in the array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">push("value")</span></td>
+              <td>Adds element to the end of the array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">shift()</span></td>
+              <td>Removes and returns the first element in the array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">unshift("value")</span></td>
+              <td>Adds element to the beginning of the array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">splice(start, #_of_elements_to_delete, "value")</span></td>
+              <td>Adds or removes elements within the array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">slice(start, end)</span></td>
+              <td>Copies a portion of the array to another array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">sort()</span></td>
+              <td>Sorts the array's data alphabetically</td>
+            </tr>
+            <tr>
+              <td><span class="mono">reverse()</span></td>
+              <td>Reverses the order of the elements in the array</td>
+            </tr>
+            <tr>
+              <td><span class="mono">concat()</span></td>
+              <td>Combines arrays</td>
+            </tr>
+          </table>
+      
+        <p>Keep in mind, all of the methods are appended to the array using dot syntax. Let's take a look at how to use these methods using a new <span class="mono">Array</span> called "holidays":</p>
+          <pre class="brush: js">
+            var holidays = ["Thanksgiving", "Christmas", "New Years"];
+          </pre>
+      
+      <div id="methodTeaching">
+        
+        <h3>Adding Elements to & Removing Elements from the End of an Array</h3>
+        <h4><span class="mono">pop()</span> method</h4>
+          <p>The <span class="mono">pop()</span> method removes the last element from the array. Now we can remove the last item in the array, "New Years":</p>
+          <pre class="brush: js">
+            var holidays = ["Thanksgiving", "Christmas", "New Years"];
+            holidays.pop();
+            
+            // New result below:
+            holidays = ["Thanksgiving", "Christmas"];
+          </pre>
+        <h4><span class="mono">push()</span> method</h4>
+          <p>The <span class="mono">push()</span> method adds a new item to the end of the array. Here we will add a new holiday, "Valentine's Day", to the end of the array:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years"];
+              holidays.push("Valentine's Day");
+              
+              // New result below:
+              holidays = ["Thanksgiving", "Christmas", "New Years", "Valentine's Day"];
+            </pre>
+        
+        <h3>Adding Elements to & Removing Elements from the Beginning of an Array</h3>
+        <h4><span class="mono">shift()</span> method</h4>
+          <p>The <span class="mono">shift()</span> method removes and returns the the first element from the beginning of the array. Let's remove the first item in the holidays array, "Thanksgiving":</p>
+          <pre class="brush: js">
+            var holidays = ["Thanksgiving", "Christmas", "New Years"];
+            holidays.shift();
+            
+            // New result below:
+            holidays = ["Christmas", "New Years"];
+            // holidays.shift() also returns:
+            "Thanksgiving"
+          </pre>
+        <h4><span class="mono">unshift()</span> method</h4>
+          <p>The <span class="mono">unshift()</span> method adds a new item to the beginning of the array. Here we will add a new holiday, "Independence Day", to the beginning of the array:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years"];
+              holidays.unshift("Independence Day");
+              
+              // New result below:
+              holidays = ["Independence Day", "Thanksgiving", "Christmas", "New Years"];
+            </pre>
+        
+        <h3>Adding & Removing Elements Within an Array</h3>
+        <h4><span class="mono">splice()</span> method</h4>
+          <p>With the <span class="mono">splice()</span> method, you can add or remove elements anywhere within an array. However, the syntax is a bit different for removing versus adding elements. To remove an element or consecutive elements, you use the following:</p>
+            <pre class="brush: js">
+              array.splice(start, #_of_elements_to_delete);
+            </pre>
+          <p class="space">Here, the <span class="mono">splice()</span> method is taking two arguments, the first is where in the array, you'd like to start removing elements and the second is how many elements you want to remove. The following would remove "Christmas" from the center of the array:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years"];
+              holidays.splice(1, 1);
+              
+              // New result below:
+              holidays = ["Thanksgiving", "New Years"];
+            </pre>
+          <p class="space">In addition to removing elements, you can add elements to the array by specifying a value for the third argument. If you don't want to remove any elements while adding new ones, you should pass in <span class="mono">0</span> as the second argument so that nothing is removed form the array. For example, if you want to add an item to the middle of the array, you can use:</p>
+            <pre class="brush: js">
+              array.splice(start, #_of_elements_to_delete, "value");
+            </pre>
+          <p class="space">You can add more than one item as well, by specifying several values:</p>
+            <pre class="brush: js">
+              array.splice(start, #_of_elements_to_delete, "value1", "value2", "value3");
+            </pre>
+          <p class="space">Here's an example of how to add three new elements to the holidays array. They will be added after the value "Christmas" and will have the indices <span class="mono">[2]</span>, <span class="mono">[3]</span>, and <span class="mono">[4]</span>:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years"];
+              holidays.splice(2, 0, "Easter", "Veterans Day", "Hanukkah");
+              
+              // New result below:
+              holidays = ["Thanksgiving", "Christmas", "Easter", "Veterans Day", "Hanukkah", "New Years"];
+            </pre>
+          <p class="space">Finally, the <span class="mono">splice()</span> method also allows you to replace elements in an array. You can use the same syntax as when you add elements to also replace elements. The only differences are that in the second argument, you must also specify how many elements should be removed, rather than setting it to <span class="mono">0</span>, as in the previous example to add an element. In addition, in the previous example, we wanted to add three elements, the first of which had an index of <span class="mono">[2]</span>. This time, we are replacing "Christmas", which has an index of <span class="mono">[1]</span>, so now we change the start to index <span class="mono">[1]</span>. Now, the following will replace "Christmas" with "Kwanzaa":</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years"];
+              holidays.splice(1, 1, "Kwanzaa");
+              
+              // New result below:
+              holidays = ["Thanksgiving", "Kwanzaa", "New Years"];
+            </pre>
+        
+        <h3>Extracting Elements From an Array</h3>
+        <h4><span class="mono">slice()</span> method</h4>
+          <p>The <span class="mono">slice()</span> method allows you to copy a part of an array and assign it to a new array. It is important to note that this method does not remove any values from the original array. Here is the syntax:</p>
+            <pre class="brush: js">
+              array.slice(start, end);
+            </pre>
+          <p>The start value is the index of the first value you want to copy; however the end value is not the end index, but technically the index after the last one you want to cut. That is because it selects up to - but NOT including - the end argument. To extract the values "Christmas" and "New Years" from the following new holidays array and add it to a second array called "holidays2", you can use:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years", "Labor Day", "St. Patricks Day"];
+              var holidays2 = holidays.slice(1, 3);
+              
+              // New result below:
+              holidays = ["Thanksgiving", "Christmas", "New Years", "Labor Day", "St. Patricks Day"];
+              holidays2 = ["Christmas", "New Years"];
+            </pre>
+          
+        <h3>Sorting Arrays</h3>
+        <h4><span class="mono">sort()</span> method</h4>
+          <p>The <span class="mono">sort()</span> method alphabetically sorts the elements of an array. Below, the holidays array is sorted using this method:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years", "Labor Day", "St. Patricks Day"];
+              holidays.sort();
+
+              // New result below:
+              holidays = ["Christmas", "Labor Day", "New Years", "St. Patricks Day", "Thanksgiving"];
+            </pre>
+        <h4><span class="mono">reverse()</span> method</h4>
+          <p>The <span class="mono">reverse()</span> method simply reverses the order of the elements in an array. It does not perform a reverse sort (Z to A rather than A to Z). In the following statement, the holidays array is transposed using the <span class="mono">reverse()</span> method:</p>
+            <pre class="brush: js">
+              var holidays = ["Thanksgiving", "Christmas", "New Years", "Labor Day", "St. Patricks Day"];
+              holidays.reverse();
+              
+              // New result below:
+              holidays = ["St. Patricks Day", "Labor Day", "New Years", "Christmas", "Thanksgiving"];
+            </pre>
+        
+        <h3>Combining Arrays</h3>
+        <h4><span class="mono">concat()</span> method</h4>
+          <p>The final method we'll discuss, the <span class="mono">concat()</span> method is used to combine arrays. The syntax for this method is:</p>
+            <pre class="brush: js">
+              array1.concat(array2);
+            </pre>
+        <p>In the syntax example, <span class="mono">array2</span> is appended to <span class="mono">array1</span>. You can also append more arrays to each other by adding more arguments to the <span class="mono">concat()</span> method using the following syntax:</p>
+          <pre class="brush: js">
+            array1.concat(array2, array3);
+          </pre>
+        <p>In the following example, we will create three arrays called "primary", "secondary" and "tertiary". Then, we can use the concat method on the first array, "primary", to combine all three arrays. We will assign the combined array to a new variable, "colors":</p>
+          <pre class="brush: js">
+            var primary = ["yellow", "red", "blue"];
+            var secondary = ["orange", "purple", "green"];
+            var tertiary = ["yellow-orange", "red-orange", "red-purple", "blue-purple", "blue-green", "yellow-green"];
+            var colors = primary.concat(secondary, tertiary);
+            
+            // New result below:
+            colors = ["yellow", "red", "blue", "orange", "purple", "green", "yellow-orange", "red-orange", "red-purple", "blue-purple", "blue-green", "yellow-green"];
+          </pre>
+        
+        <h3>Learn More</h3>
+        <p id="mozillaLink">For more on JavaScript's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><span class="mono">array</span> methods</a>, please visit Mozilla Developer Network's Array page that details more about these useful methods!</p>
+      </div>
+    
+    <footer>&copy; 2016 Lauren Namba</footer>
+    </div>
+    
+    <link type="text/javascript" src="main.js">
+    <script type="text/javascript" src="shCore.js"></script>
+    <script type="text/javascript" src="shBrushJScript.js"></script>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+  </body>
+</html>

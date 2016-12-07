@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>All About Arrays</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="styles/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Chango|Glegoo|Merriweather+Sans" rel="stylesheet">
+    <script src="modernizr.custom.05819.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>All About Arrays</h1>
+      <nav>
+        <ul id="nav">
+          <li><a href="index.html">What's an Array?</a></li>
+          <li><a href="methods.html">Manipulating Arrays</a></li>
+          <li><a href="dataconversion.html" class="current">Arrays to Strings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="arrayDescription">
+      <div id="methodTeaching">
+        <h2>Storing All of Your [ Data ]</h2>
+        
+        <h3>Converting Between Data Types</h3>
+          <p>Let's look at a few more important methods that are useful when using arrays. Sometimes, when we use arrays, we want to combine array elements to form a string. In this case, the string doesn't have to be one long sentence of random words or other data types that might be found in your array. We can instead separate the element values using a comma or other specified character.</p>
+          <p>In addition, we may want to take a string and convert it into an array. This is sometimes useful if we want to loop through the data, for example. The following two methods will help you convert an array into a string and a string into an array.</p>
+        
+        <h4><span class="mono">join()</span> method</h4>
+          <p>The <span class="mono">join()</span> method let's us combine array emeents into a string, separated by commas or other characters. Its syntax is:</p>
+            <pre class="brush: js">
+              array.join(["separator"]);
+            </pre>
+          <p>The <span class="mono">separator</span> argument in the syntax example above let's us specify the characters that will separate the contents of each array element in the returned string. If no character is specified, the <span class="mono">join()</span> method will automatically separate the elements with a comma (but no space). In the example below, the <span class="mono">join()</span> method is used to turn the array, "hawaiianIslands", into a string. The <span class="mono">separator</span> argument used is (", "), which has the effect of putting a comma then a space after each:</p>
+            <pre class="brush: js">
+              var hawaiianIslands = ["Hawaii", "Maui", "Oahu", "Kauai", "Molokai", "Lanai", "Niihau", "Kahoolawe"];
+              hawaiianIslands.join(", ");
+              
+              // New result below:
+              hawaiianIslands = "Hawaii, Maui, Oahu, Kauai, Molokai, Lanai, Niihau, Kahoolawe";
+            </pre>
+        
+        <h4><span class="mono">split()</span> method</h4>
+          <p>The <span class="mono">split()</span> method allows us to do the opposite of the <span class="mono">join()</span> method. With this method, we can split a string into an array of values. Its syntax looks like this:
+            <pre class="brush: js">
+              array = string.split(separator[, limit]);
+            </pre>
+          <p>In this example, the <span class="mono">separator</span> argument specifies the characters where the string will be separated into array elements and the <span class="mono">limit</span> argument determines the maximum length od the array. If no arguments are included, the whole string is assigned to the first element of the array. Below, we can convert the string we created with the <span class="mono">join()</span> method back into an array with the <span class="mono">split()</span> method:</p>
+            <pre class="brush: js">
+              var hawaiianIslands = "Hawaii, Maui, Oahu, Kauai, Molokai, Lanai, Niihau, Kahoolawe";
+              hawaiianIslands.split(", ");
+              
+              // New result below:
+              hawaiianIslands = ["Hawaii", "Maui", "Oahu", "Kauai", "Molokai", "Lanai", "Niihau", "Kahoolawe"];
+            </pre>
+        
+        <h3>...and One More Way to Make an Array into a String!</h3>
+        <h4><span class="mono">toString()</span> method</h4>
+          <p>The <span class="mono">toString()</span> method is an alternative to the <span class="mono">join()</span> method for converting an array into a string. It is relatively simple; you just use dot notation at the end of the method to be converted into an array. This method doesn't accept any arguments and it will return a string separated only with commas. Back to the "hawaiianIslands" array, we could say:</p>
+            <pre class="brush: js">
+              var hawaiianIslands = ["Hawaii", "Maui", "Oahu", "Kauai", "Molokai", "Lanai", "Niihau", "Kahoolawe"];
+              hawaiianIslands.toString();
+              
+              // New result below:
+              hawaiianIslands = "Hawaii,Maui,Oahu,Kauai,Molokai,Lanai,Niihau,Kahoolawe";
+            </pre>
+        
+      </div>
+    <footer>&copy; 2016 Lauren Namba</footer>
+    </div>
+    <link type="text/javascript" src="main.js">
+    <script type="text/javascript" src="shCore.js"></script>
+    <script type="text/javascript" src="shBrushJScript.js"></script>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+  </body>
+</html>

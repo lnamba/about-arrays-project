@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>All About Arrays</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="styles/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Chango|Glegoo|Merriweather+Sans" rel="stylesheet">
+    <script src="modernizr.custom.05819.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>All About Arrays</h1>
+      <nav>
+        <ul id="nav">
+          <li><a href="index.html" class="current">What's an Array?</a></li>
+          <li><a href="methods.html">Manipulating Arrays</a></li>
+          <li><a href="dataconversion.html">Arrays to Strings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="arrayDescription">
+      <div id="methodTeaching">
+        <h2>Storing All of Your [ Data ]</h2>
+        <h3>What is an Array?</h3>
+          <ul>
+            <li>An <em>array</em> contains a set of data that can be represented by a single variable name. It is like a collection of variables contained within a single variable</li>
+            <li>Arrays are used to store a group or a list of related information</li>
+          </ul>
+        <h3>Declaring Arrays</h3>
+          <p>You create an array with an <em>array literal</em>, a statement that declares a variable and specifies an array as its content. You should use brackets <span class="mono">([])</span> to show that you are declaring an array.</p>
+          <p>Below, a variable called "colors" has been declared. Its value is an array of three colors: "red", "yellow" and "blue".</p>
+          <pre class="brush: js">
+            var colors = ["red", "yellow", "blue"];
+          </pre>
+        <h3>More on Arrays</h3>
+          <ul>
+            <li>Each value contained in an array is called an <em>element</em></li>
+            <li>Each element is accessed using an <em>index</em>, or position within the array. The first element in an array has the index <span class="mono">0</span>. To access a specific element, you can type the name of the array and then within square brackets, type the element's index in the array. In the colors array, you can access the "yellow" element with the following statement. Remember, <span class="mono">[1]</span> in an array is actually the second element because the first index is always <span class="mono">0</span>:</li>
+              <pre class="brush: js">
+                var colors = ["red", "yellow", "blue"];
+                colors[1];
+              </pre>
+            <li>To add a new element to an existing array, just type the array name and within brackets, type the index that would be next in the array. Finally, give it a value. For example, the following would add "green" to the colors array:</li>
+              <pre class="brush: js">
+                var colors = ["red", "yellow", "blue"];
+                colors[3] = "green";
+              </pre>
+            <li>You can also create an empty array to which you can add elements later. Do this by declaring a variable and setting it to an empty set of brackets. For example, below is an empty array called cities:</li>
+              <pre class="brush: js">
+                var cities = [];
+              </pre>
+          </ul>
+        <h3>What Data Types Can Be Stored in Arrays?</h3>
+          <p>In other programming languages, the data in an array must be of the same data type. However in JavaScript, the values within a single array can be of multiple data types. For example, you can create an array by declaring a variable called user1 and then assign it the values of the user's name (string), age (number), and whether or not they are married (Boolean). You can then declare a user2 variable and include the same data for the next user. In fact, you can do this as many times as you'd like! Here is an example below:</p>
+            <pre class="brush: js">
+              var user1 = ["Ted", 58, true];
+              var user2 = ["Bryan", 23, false];
+              var user3 = ["Michele", 59, true];
+            </pre>
+      </div>
+    <footer>&copy; 2016 Lauren Namba</footer>
+    </div>
+    <link type="text/javascript" src="main.js">
+    <script type="text/javascript" src="shCore.js"></script>
+    <script type="text/javascript" src="shBrushJScript.js"></script>
+    <script type="text/javascript">
+      SyntaxHighlighter.all()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+header {
+  background: url(javascript-arrays.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+}
+
+h1 {
+  text-align: center;
+  color: #FA0990;
+  font-family: "Chango", Helvetica Neue;
+  font-size: 4em;
+  margin: 0;
+  padding: 30px 0 0 0;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Glegoo", Helvetica Neue;
+  font-size: 2em;
+  color: #0823FA;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #FA0990;
+}
+
+h3 {
+  font-family: "Glegoo", Helvetica Neue;
+  color: #0991FA;
+  font-size: 1.5em;
+  padding-top: 30px;
+}
+
+h4 {
+  font-family: "Glegoo", Helvetica Neue;
+  color: #AE2BDA;
+  font-size: 1.1em;
+}
+
+p, li {
+  font-family: "Merriweather Sans", Helvetica Neue;
+  line-height: 1.25em;
+}
+
+.space {
+  padding-top: 20px;
+}
+
+#nav {
+  text-align: center;
+  padding-top: 200px
+  
+}
+
+#nav li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0 50px 50px 10px;
+  font-size: 1.2em;
+}
+
+#nav a {
+  color: #0823FA;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+#nav a:visited,
+#mozillaLink a:visited {
+  color: #FA0990;
+}
+
+#nav a:hover,
+#mozillaLink a:hover {
+  color: #089CFA;
+}
+
+nav #nav .current {
+  color: #AE2BDA; 
+}
+
+#mozillaLink a {
+  color: #0823FA;
+}
+
+em {
+  color: #FA0990;
+}
+
+#jsArrayImg {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#arrayDescription {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+#arrayDescription li {
+  padding-bottom: 10px;
+}
+
+#methodsTable {
+  font-family: "Merriweather Sans", Helvetica Neue;
+  width: 100%;
+/*  background-color: #FFFF66;*/
+  background-color: #b6e1fc;
+}
+
+#methodsTable, 
+th, td {
+  border: 2px solid #FA0990;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px
+}
+
+.mono {
+  font-family: "Courier", monospace; !important
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  font-family: "Glegoo", Helvetica Neue;
+  color: #FA0990;
+  border-top: 2px solid #FA0990;
+}
+
+#methodTeaching {
+  padding-bottom: 30px;
+}
